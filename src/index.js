@@ -1,9 +1,11 @@
 import ToolTip from './ninja-ui/tooltip';
 import Dropdown from './ninja-ui/dropdown';
 import Tabs from './ninja-ui/Tabs';
+import Snackbar from './ninja-ui/Snackbar';
 import './styles/tooltip.css';
 import './styles/dropdown.css';
 import './styles/tabs.css';
+import './styles/snackbar.css';
 
 // create a tooltip
 const tooltip = new ToolTip(document.querySelector('.tooltip'));
@@ -19,3 +21,10 @@ dropdowns.forEach(dropdown => {
 // create tabs
 const tabs = new Tabs(document.querySelector('.tabs'));
 tabs.init();
+
+// create snackbar
+const snackbar = new Snackbar();
+snackbar.init();
+
+const button = document.querySelector('button');
+button.addEventListener('click', () => snackbar.show("here's your snackbar"));
